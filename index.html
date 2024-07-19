@@ -13,5 +13,47 @@
       <div id="password_container"> <label>Password:</label>  <input type="password" id="password" placeholder="Enter Your Password"></div>
       <div id="forget_container"><p>Forget Password?</p></div>
        <div id="button_container"> <button id="btn">Sign In</button></div>
+       <div id="last_container"> <p id="p_container">Not a Member? <span><a href="http://127.0.0.1:5501/Final_Test_Ui_Ux/mregisterform.html">Sign Up Here</a></span></p></div>
+    </div>
+       <p id="msg"></p>
+       <span id="logo"></span>
+    </div>
+    
 </body>
+<script>
+     let btn = document.getElementById("btn");
+    // let arr = [
+    //     {email: "abc@gmail.com", password: "123456"},
+    //     {email: "xyz@gmail.com", password: "1234567"}
+    // ];
+    let arr = JSON.parse(localStorage.getItem("user")) || [];
+       function loginUser(){
+        let userdetails={
+            email:document.getElementById("email").value,
+            password:document.getElementById("password").value
+        }
+        if (userdetails.email==""||userdetails.password==""){
+        alert("Please fill all the fields");
+        return
+    }
+        let value=arr.find((user)=>
+        user.email===userdetails.email && user.password===userdetails.password
+    );
+    if(value){
+msg.innerHTML="";
+alert("Log In Sucessful")
+let loggedInEmail=localStorage.setItem("loggedInEmail",userdetails.email)
+window.location.href="mainweb.html";
+msg.style.color="green";
+       } else{
+        msg.innerHTML="";
+        alert("Login Failed");
+        msg.style.color="red";
+       }
+    }
+    btn.addEventListener("click",()=>{
+        // e.preventDefault();
+        loginUser();
+    });
+</script>
 </html>
