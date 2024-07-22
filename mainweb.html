@@ -1,800 +1,922 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
-    <style>
-        #super_container{
-            border: 1px solid red;
-            width: 90%;
-            /* height:150vh; */
-            margin: auto;
-            background-image:
-    linear-gradient(
-      rgb(248, 17, 52), #f006c9,rgb(23, 23, 24)
-    );
-        }
-        #logo_container{
-            border: 1px solid red;
-            border-radius: 50px;
-            width: 10%;
-            overflow: hidden;
-            padding: 5px;
-        }
-        #logo_container img{
-            border-radius: 50px;
-            width: 98%;
-            
-            height: 6vh;
-            transition: all 1s ease-in-out;
-        }
-        #logo_container img:hover{
-cursor: pointer;
-transform: scale(1.1);
-        }
-#nav{
-/* border: 1px solid black; */
-z-index: 1;
-position: sticky;
-top: 0;
-width: 98%;
-border-radius: 12px;
-margin: auto;
-padding: 10px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color:rgb(1,1,1)
-}
-    #menu_container{
-        display: none;
-        /* border: 1px solid white; */
-    }   
-        #nav_links_container{
-            /* border: 1px solid green; */
-            width: 60%;
-        
-        }
-        #nav_links_container ul{
-display: flex;
-justify-content: space-around;
-list-style: none;
-color:rgb(141,116,74);
-font-size: larger;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        }
-         #nav_links_container ul li{
-            transition: all 1s ease-in-out;
-         }
-        #nav_links_container ul li:hover{
-            cursor: pointer;
-            color: red;
-        }
-        #usercridential{
-            /* border: 1px solid rgb(247, 106, 13); */
-            padding: 10px;
-            display: flex;
-            justify-content: space-around;
-            width: 20%;
-            color: white;
-            font-size: larger;
-        }
-        #useremail{
-            /* border: 1px solid red; */
-            transition: all 1s ease-in-out;
-        }
-        #useremail:hover{
-           color:rgb(141,116,74) ;
-           cursor: pointer;
-         
+  <style>
+    #super_container {
+      border: 1px solid red;
+      gap: 5px;
+      width: 90%;
+      /* height:150vh; */
+      margin: auto;
+      background-image:
+        linear-gradient(rgb(217, 16, 46), #610652, rgb(23, 23, 24));
+    }
 
-        }
-        #userlog{
-            border: 2px solid red;
-            padding: 5px;
-            width: 25%;
-            font-weight: bold;
-            border-radius: 10px;
-            background-color: rgb(141,116,74);
-            transition: all 1s ease-in-out;
-        }
-        #userlog:hover{
-            background-color: red;
-            cursor: pointer;
-            border: 2px solid green;
-        }
-        #hero_container{
-            /* border: 1px solid rgb(102, 0, 255); */
-            height:25vh;
-            width: 99%;
-            display: grid;
-            border-radius: 12px;
-            place-items: center;
-            overflow: hidden;
-            margin: auto;
-            background-image:
-    linear-gradient(
-      rgb(239, 37, 10),red
-    );
-        }
-      #center_container{
-        /* border: 1px solid red; */
-        /* font-size: 50px; */
-        color: white;
-        font-family:  cursive;
-        text-align: center;
-        
-      }
-      #h1_container{
-        border: 1px solid red;
-        text-align: center;
-      }
-      #containerApi {
-   
-   width: 98.5%;
-  
-   margin: 20px auto;
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap:20px;
-}
-#containerApi div:nth-child(odd){
-   background-color: #e5eeeeec;
-   padding: 10px;
-   width: 89%;
-   border: 1px solid #ddd;
-   text-align: center;
-   /* overflow: hidden; */
-   border-radius: 45px 10px 40px 10px;
-   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 
-   0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-   transition: 0.6s ease-in-out;
-}
-#containerApi div:nth-child(even){
- background-color: #ebeee7ec;
- padding: 10px;
- width: 89%;
- border: 1px solid #ddd;
- text-align: center;
- /* overflow: hidden; */
- border-radius: 45px 10px 40px 10px;
- box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 
- 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
- transition: 0.6s ease-in-out;
-}
-img{
-   width: 40%;
-   height: 22vh;
-   border-radius: 10px;
-   transition: ease-in-out 3s;
-}
-#card_cont{
-    border: 1px solid rgb(15, 14, 14);
-    text-align: center;
-    background-color: #f006c9;
-}
-#containerApi div:hover{
-   background-color: rgba(225, 240, 202, 0.742);
-   transform: scale(1.025);
-   cursor: pointer;
- 
-}
+    #logo_container {
+      border: 1px solid red;
+      border-radius: 50px;
+      width: 10%;
+      overflow: hidden;
+      padding: 5px;
+    }
 
-#containerApi div #button_cont{
-    /* border: 1px solid red; */
-    background-color: transparent;
-    border-radius: 10px;
-    /* text-align: center; */
-    /* width: 70%; */
-    display: flex;
-    justify-content: space-around;
-    transform: none;
-    box-shadow: none;
+    #logo_container img {
+      border-radius: 50px;
+      width: 98%;
+
+      height: 6vh;
+      transition: all 1s ease-in-out;
+    }
+
+    #logo_container img:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    #nav {
+      /* border: 1px solid black; */
+      z-index: 1;
+      position: sticky;
+      top: 0;
+      width: 97%;
+      border-radius: 10px;
+      margin: auto;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:rgb(41,19,38);
+    }
+
+    #menu_container {
+      display: none;
+      /* border: 1px solid white; */
+    }
+
+    #nav_links_container {
+      /* border: 1px solid green; */
+      width: 60%;
+
+    }
+
+    #nav_links_container ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      color: white;
+      font-size: larger;
+
+    }
+
+    #nav_links_container ul li {
+      transition: all 1s ease-in-out;
+    }
+
+    #nav_links_container ul li:hover {
+      cursor: pointer;
+      color: red;
+    }
+
+    #usercridential {
+      /* border: 1px solid rgb(247, 106, 13); */
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      width: 20%;
+      color: white;
+      font-size: larger;
+    }
+
+    #useremail {
+      /* border: 1px solid red; */
+      transition: all 1s ease-in-out;
+    }
+
+    #useremail:hover {
+      color: red;
+      cursor: pointer;
+
+
+    }
+
+    #userlog {
+      border: 2px solid red;
+      padding: 5px;
+      width: 25%;
+      font-weight: bold;
+      border-radius: 10px;
+      background-color: rgb(247, 233, 208);
+      transition: all 1s ease-in-out;
+    }
+
+    #userlog:hover {
+      background-color: red;
+      cursor: pointer;
+      border: 2px solid green;
+    }
+
+    #hero_container {
+      /* border: 1px solid rgb(102, 0, 255); */
+      margin: auto;
+      height: 100vh;
+      width: 98%;
+      display: grid;
+      border-radius: 12px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("https://images.stockcake.com/public/1/c/b/1cb58a80-95b0-4be5-b75c-3088adb6d736_large/vibrant-pop-art-stockcake.jpg");
+    }
+
+    #center_container {
+      /* border: 1px solid rgb(17, 12, 12); */
+      /* font-size: 50px; */
+      color: white;
+      font-family: cursive;
+      text-align: center;
+
+    }
+
+    #h1_container {
+      /* border: 1px solid red; */
+      text-align: center;
+    }
+
+    #containerApi {
+
+      width: 98.5%;
+
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    #containerApi div:nth-child(odd) {
+      background-color: #e5eeeeec;
+      padding: 10px;
+      width: 89%;
+      border: 1px solid #ddd;
+      text-align: center;
+      /* overflow: hidden; */
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+      transition: 0.6s ease-in-out;
+    }
+
+    #containerApi div:nth-child(even) {
+      background-color: #ebeee7ec;
+      padding: 10px;
+      width: 89%;
+      border: 1px solid #ddd;
+      text-align: center;
+      /* overflow: hidden; */
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+      transition: 0.6s ease-in-out;
+    }
+
+    img {
+      width: 40%;
+      height: 22vh;
+      border-radius: 10px;
+      transition: ease-in-out 3s;
+    }
+#button_cont:hover{
+  transform: none;
 }
-#button_cont button{
-    /* border:  1px solid red; */
-    border-radius: 10px;
-    background-color: #e5eeeeec;
-    transition: all 1s ease-in-out;
-    
-}
-#button_cont button:hover{
-  background-color:  rgb(206,44,209);
- 
-  cursor: pointer;
-}
-#form_container{
-    /* border: 1px solid red; */
-    height: 52vh;
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 15px;
-}
-#image_container{
-    /* border: 1px solid red; */
-    height: 52vh;
-    width: 48%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 10px;
-    transition: all 1s ease-in-out;
-}
-#image_container img{
-    /* border: 1px solid rgb(14, 212, 27); */
-    height: 52vh;
-    width: 100%;
-}
-#image_container img:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-}
-#contant_us_form{
-    /* border: 1px solid red; */
-    height: 52vh;
-    width: 48%;
-    display: grid;
-    place-items: center;
-}
-#new_form{
-    /* border: 1px solid red; */
-    width: 98%;
-height: 52vh;
-display: grid;
-place-items: center;
-background-color: rgb(216,222,240);
-border-radius: 10px;
-}
-#email{
-    /* border: 1px solid rgb(231, 15, 15); */
-    width: 95%;
-    padding: 5px;
-    /* border-radius: 10px; */
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #000000;
-    margin: auto;
-    text-align: center;
-}
-#email:focus{
+    #card_cont {
+      border: 1px solid rgb(15, 14, 14);
+      text-align: center;
+      background-color: #f006c9;
+    }
+
+    #containerApi div:hover {
+      background-color: rgba(225, 240, 202, 0.742);
+      transform: scale(1.025);
+      cursor: pointer;
+
+    }
+
+    #containerApi div #button_cont {
+      /* border: 1px solid red; */
+      background-color: transparent;
+      border-radius: 10px;
+      /* text-align: center; */
+      /* width: 70%; */
+      display: flex;
+      justify-content: space-around;
+      transform: none;
+      box-shadow: none;
+    }
+
+    #button_cont button {
+      /* border:  1px solid red; */
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #e5eeeeec;
+      transition: all 1s ease-in-out;
+
+    }
+
+    #button_cont button:hover {
+      background-color: rgb(206, 44, 209);
+
+      cursor: pointer;
+    }
+
+    #form_container {
+      /* border: 1px solid red; */
+      height: 52vh;
+      
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 15px;
+    }
+
+    #image_container {
+      /* border: 1px solid red; */
+      height: 52vh;
+      width: 48%;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: all 1s ease-in-out;
+    }
+
+    #image_container img {
+      /* border: 1px solid rgb(14, 212, 27); */
+      height: 52vh;
+      width: 100%;
+    }
+
+    #image_container img:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    #contant_us_form {
+      /* border: 1px solid red; */
+      height: 52vh;
+      width: 48%;
+      display: grid;
+      place-items: center;
+    }
+
+    #new_form {
+      /* border: 1px solid red; */
+      width: 98%;
+      height: 52vh;
+      display: grid;
+      place-items: center;
+      background-color: rgb(216, 222, 240);
+      border-radius: 10px;
+    }
+
+    #email {
+      /* border: 1px solid rgb(231, 15, 15); */
+      width: 95%;
+      padding: 5px;
+      /* border-radius: 10px; */
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #000000;
+      margin: auto;
+      text-align: center;
+    }
+
+    #email:focus {
       outline: none;
-      border-color: #ccc;}
-#password{
-    /* border: 1px solid rgb(216, 10, 10); */
-    width: 95%;
-    padding: 5px;
-    /* border-radius: 10px; */
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #000000;
-    margin: auto;
-    text-align: center;
-}
-#password:focus{
-      outline: none;
-      border-color: #ccc;}
-#btn{
-    border: 1px solid black;
-    width: 98%;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 20px;
-    /* text-align: center; */
-    font-size: large;
-    transition: all 1s ease-in-out;
-    
-   
-}
-#btn:hover{
-    cursor: pointer;
-    background-color: 
-    rgb(206,44,209);
-}
-label{
-    color:black;
-    font-size: large;
-}
-#password_container{
-    /* border: 1px solid red; */
-    /* text-align: center; */
-    width: 85%;
-    /* display: flex; */
-    margin: auto;
-}
-#button_container{
-    /* border: 1px solid red; */
-    text-align: center;
-    width: 85%;
-}
-#email_container{
-    /* border: 1px solid red; */
-    /* text-align: center; */
-    width: 85%;
-    /* display:flex ; */
-    margin: auto;
-}
-#contact_us_h1{
-    text-align: center;
-}
+      border-color: #ccc;
+    }
 
-.footer {
-    /* width: 100%; */
-    margin: auto;
-    text-align: center;
-    /* border: 1px solid white; */
-  /* position: absolute; */
-  /* top: 50%; */
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
-  /* max-width: 1280px; */
-  width: 98%;
-  /* background: #10182F; */
-  border-radius: 6px;
-}
-.footer .footer-row {
-    /* border: 1px solid white; */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 3.5rem;
-  /* padding: 60px; */
-}
-.footer-row .footer-col h4 {
-    /* border:  1px solid white; */
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-ul.links{
-    text-align: center;
-    padding: 0px;
-    /* border: 1px solid rgb(19, 233, 15); */
-    margin: auto;
-}
-.footer-col .links {
-    width: 70;
-    text-align: center;
-    /* border:  1px solid white; */
-  margin-top: 20px;
-}
-.footer-col .links  {
-    /* border:  1px solid white; */
-  list-style: none;
-  margin-bottom: 10px;
-}
-.footer-col .links li a {
-    text-align: center;
-    /* border:  1px solid white; */
-  text-decoration: none;
-  color: #bfbfbf;
-}
-.footer-col .links li a:hover {
-  color: #fff;
-}
-.footer-col p {
-  /* margin: 20px 0; */
-  color: #bfbfbf;
-  max-width: 300px;
-}
-.footer-col form {
-    /* border:  1px solid white; */
-  display: flex;
-  gap: 5px;
-}
-.footer-col input {
-    border:  1px solid white;
-  height: 40px;
-  border-radius: 6px;
-  background: none;
-  /* width:1 %; */
-  outline: none;
-  border: 1px solid #7489C6 ;
-  caret-color: #fff;
-  color: #fff;
-  
-  /* padding-left: -20px; */
-}
-input{
-    /* border:  1px solid rgb(242, 18, 18); */
-    padding: 0px;
-    text-align: center;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #000000;
-    margin: auto;
-    text-align: center;
-}
-/* .icons{
+    #password {
+      /* border: 1px solid rgb(216, 10, 10); */
+      width: 95%;
+      padding: 5px;
+      /* border-radius: 10px; */
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #000000;
+      margin: auto;
+      text-align: center;
+    }
+
+    #password:focus {
+      outline: none;
+      border-color: #ccc;
+    }
+
+    #btn {
+      border: 1px solid black;
+      width: 98%;
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 20px;
+      /* text-align: center; */
+      font-size: large;
+      transition: all 1s ease-in-out;
+
+
+    }
+
+    #btn:hover {
+      cursor: pointer;
+      background-color:
+        rgb(206, 44, 209);
+    }
+
+    label {
+      color: black;
+      font-size: large;
+    }
+
+    #password_container {
+      /* border: 1px solid red; */
+      /* text-align: center; */
+      width: 85%;
+      /* display: flex; */
+      margin: auto;
+    }
+
+    #button_container {
+      /* border: 1px solid red; */
+      text-align: center;
+      width: 85%;
+    }
+
+    #email_container {
+      /* border: 1px solid red; */
+      /* text-align: center; */
+      width: 85%;
+      /* display:flex ; */
+      margin: auto;
+    }
+
+    #contact_us_h1 {
+      text-align: center;
+      color: #ccc;
+    }
+
+    .footer {
+      /* width: 100%; */
+      margin: auto;
+      text-align: center;
+      /* border: 1px solid white; */
+      /* position: absolute; */
+      /* top: 50%; */
+      /* left: 50%; */
+      /* transform: translate(-50%, -50%); */
+      /* max-width: 1280px; */
+      width: 98%;
+      /* background: #10182F; */
+      border-radius: 6px;
+    }
+
+    .footer .footer-row {
+      /* border: 1px solid white; */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 3.5rem;
+      /* padding: 60px; */
+    }
+
+    .footer-row .footer-col h4 {
+      /* border:  1px solid white; */
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    ul.links {
+      text-align: center;
+      padding: 0px;
+      /* border: 1px solid rgb(19, 233, 15); */
+      margin: auto;
+    }
+
+    .footer-col .links {
+      width: 70;
+      text-align: center;
+      /* border:  1px solid white; */
+      margin-top: 20px;
+    }
+
+    .footer-col .links {
+      /* border:  1px solid white; */
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    .footer-col .links li a {
+      text-align: center;
+      /* border:  1px solid white; */
+      text-decoration: none;
+      color: #bfbfbf;
+    }
+
+    .footer-col .links li a:hover {
+      color: #fff;
+    }
+
+    .footer-col p {
+      /* margin: 20px 0; */
+      color: #bfbfbf;
+      max-width: 300px;
+    }
+
+    .footer-col form {
+      /* border:  1px solid white; */
+      display: flex;
+      gap: 5px;
+    }
+
+    .footer-col input {
+      border: 1px solid white;
+      height: 40px;
+      border-radius: 6px;
+      background: none;
+      /* width:1 %; */
+      outline: none;
+      border: 1px solid #7489C6;
+      caret-color: #fff;
+      color: #fff;
+
+      /* padding-left: -20px; */
+    }
+
+    input {
+      /* border:  1px solid rgb(242, 18, 18); */
+      padding: 0px;
+      text-align: center;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #000000;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* .icons{
 text-align: center;
 padding: 0px;
 margin: 0px;
 } */
-/* .footer-col input::placeholder {
+    /* .footer-col input::placeholder {
   color: #ccc;
 } */
- .footer-col form button {
-    /* border:  1px solid white; */
-  background: #fff;
-  outline: none;
-  border: px solid black;
-  padding: 10px 15px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 1s ease-in-out;
-}
-.footer-col form button:hover {
-  background: rgb(206,44,209);
-}
-.footer-col .icons {
-    /* border:  1px solid white; */
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
-  gap: 10px;
-  cursor: pointer;
-}
-.footer-col .icons i {
-    /* border:  1px solid white; */
-  color: #afb6c7;
-}
-.footer-col .icons i:hover  {
-  color: #fff;
-}
-  /* .footer {
+    .footer-col form button {
+      /* border:  1px solid white; */
+      background: #fff;
+      outline: none;
+      border: px solid black;
+      padding: 10px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 1s ease-in-out;
+    }
+
+    .footer-col form button:hover {
+      background: rgb(206, 44, 209);
+    }
+
+    .footer-col .icons {
+      /* border:  1px solid white; */
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .footer-col .icons i:hover{
+      transform: scale(1.1);
+    }
+    .footer-col .icons i {
+      /* border:  1px solid white; */
+      color: #afb6c7;
+      transition: all 1s ease-in-out;
+    }
+
+    .footer-col .icons i:hover {
+      color: #fff;
+    }
+
+    /* .footer {
     /* position: relative; */
     /* bottom: 0; */
     /* left: 0; */
     /* transform: none; */
     /* width: 100%; */
     /* border-radius: 0; */
-   
-  .footer .footer-row {
-    padding: 20px;
-    gap: 1rem;
-  }
-  .footer-col form {
-    display: block;
-  }
-  .footer-col form :where(input, button) {
-    width: 100%;
-  }
-  .footer-col form button {
-    margin: 10px 0 0 0;
-  }
 
-h3 {
-  margin-top: 0;
-}
-@media screen and (min-width:360px) and (max-width:767px) {
-  #super_container{
-    width: 100%;
-  }
-  #logo_container{
-    width: 10%;
-  }
-  #nav{
-    width: 93%;
-    margin: auto;
-    
-  }
-  #menu_container{
-    display: block;
-    color: white;
-    font-size: x-large;
-    transition: all 1s ease-in-out;
-  }
-  #menu_container:hover{
-    color:rgb(141,116,74);
-    cursor: pointer;
-  }
-  #nav_links_container {
-    display: none;
-  }
-  #usercridential{
-    /* border:1px solid white ; */
-    font-size: smaller;
-    width: 65%;
-  }
-  #useremail{
-    width: 55%;
-    display: grid;
-    place-items: center;
-  }
-  #userlog{
-   width: 35%;
-  }
-  #hero_container{
-width: 98%;
-  }
-   #center_container{
-  font-size: smaller;
-  }
-  #h1_container{
-    font-size: x-small;
-  }
-  #containerApi{
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-  }
-  #containerApi div{
-    margin: auto;
-  }
-  #contact_us_h1{
-    font-size:large;
-    color: #fff;
-  }
-  #form_container{
-    display: block;
-    height: auto;
-    
-  }
-  #image_container{
-    width: 98%;
-    margin:10px auto;
-  }
-  #contant_us_form{
-    width: 100%;
-  }
-  .footer .footer-row {
-display: block;
-  }
-}
-@media screen and (min-width:768px) and (max-width:1024px) {
-  #super_container{
-    width: 100%;
-  }
-  #logo_container{
-    width: 10%;
-  }
-  #nav{
-    width: 96%;
-    margin: auto;
-    
-  }
-  #menu_container{
-    display: block;
-    color: white;
-    font-size: xx-large;
-    transition: all 1s ease-in-out;
-  }
-  #menu_container:hover{
-    color:rgb(141,116,74);
-    cursor: pointer;
-  }
-  #nav_links_container {
-    display: none;
-  }
-  #usercridential{
-    /* border:1px solid white ; */
-    font-size: large;
-    width: 65%;
-  }
-  #useremail{
-    width: 55%;
-    display: grid;
-    place-items: center;
-  }
-  #userlog{
-   width: 35%;
-  }
-  #hero_container{
-width: 98%;
-  }
-   #center_container{
-  font-size: smaller;
-  }
-  #h1_container{
-    font-size: large;
-  }
-  #containerApi{
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-  }
-  #containerApi div{
-    margin: auto;
-  }
-  #contact_us_h1{
-    font-size:xx-large;
-    color: #fff;
-  }
-  #form_container{
-    display: block;
-    height: auto;
-    
-  }
-  #image_container{
-    width: 98%;
-    margin:10px auto;
-  }
-  #contant_us_form{
-    width: 100%;
-  }
-  .footer .footer-row {
-display: grid;
-grid-template-columns: repeat(2,1fr);
-font-size: 30px;
-  }
-}
-    </style>
+    .footer .footer-row {
+      padding: 20px;
+      gap: 1rem;
+    }
+
+    .footer-col form {
+      display: block;
+    }
+
+    .footer-col form :where(input, button) {
+      width: 100%;
+    }
+
+    .footer-col form button {
+      margin: 10px 0 0 0;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width:360px) and (max-width:767px) {
+      #super_container {
+        width: 100%;
+      }
+
+      #logo_container {
+        width: 10%;
+      }
+
+      #nav {
+        width: 93%;
+        margin: auto;
+
+      }
+
+      #menu_container {
+        display: block;
+        color: white;
+        font-size: x-large;
+        transition: all 1s ease-in-out;
+      }
+
+      #menu_container:hover {
+        color: rgb(141, 116, 74);
+        cursor: pointer;
+      }
+
+      #nav_links_container {
+        display: none;
+      }
+
+      #usercridential {
+        /* border:1px solid white ; */
+        font-size: smaller;
+        width: 65%;
+      }
+
+      #useremail {
+        width: 55%;
+        display: grid;
+        place-items: center;
+      }
+
+      #userlog {
+        width: 35%;
+      }
+
+      #hero_container {
+        width: 98%;
+        height: 40vh;
+      }
+
+      #center_container {
+        font-size: smaller;
+      }
+
+      #h1_container {
+        font-size: x-small;
+      }
+
+      #containerApi {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      #containerApi div {
+        margin: auto;
+      }
+
+      #contact_us_h1 {
+        font-size: large;
+        color: #fff;
+      }
+
+      #form_container {
+        display: block;
+        height: auto;
+
+      }
+
+      #image_container {
+        width: 98%;
+        margin: 10px auto;
+      }
+
+      #contant_us_form {
+        width: 100%;
+      }
+
+      .footer .footer-row {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width:768px) and (max-width:1024px) {
+      #super_container {
+        width: 100%;
+      }
+
+      #logo_container {
+        width: 10%;
+      }
+
+      #nav {
+        width: 96%;
+        margin: auto;
+
+      }
+
+      #menu_container {
+        display: block;
+        color: white;
+        font-size: xx-large;
+        transition: all 1s ease-in-out;
+      }
+
+      #menu_container:hover {
+        color: rgb(141, 116, 74);
+        cursor: pointer;
+      }
+
+      #nav_links_container {
+        display: none;
+      }
+
+      #usercridential {
+        /* border:1px solid white ; */
+        font-size: large;
+        width: 65%;
+      }
+
+      #useremail {
+        width: 55%;
+        display: grid;
+        place-items: center;
+      }
+
+      #userlog {
+        width: 35%;
+      }
+
+      #hero_container {
+        width: 98%;
+        height: 40vh;
+      }
+
+      #center_container {
+        font-size: smaller;
+      }
+
+      #h1_container {
+        font-size: large;
+      }
+
+      #containerApi {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #containerApi div {
+        margin: auto;
+      }
+
+      #contact_us_h1 {
+        font-size: xx-large;
+        color: #fff;
+      }
+
+      #form_container {
+        display: block;
+        height: auto;
+
+      }
+
+      #image_container {
+        width: 98%;
+        margin: 10px auto;
+      }
+
+      #contant_us_form {
+        width: 100%;
+      }
+
+      .footer .footer-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 30px;
+      }
+    }
+  </style>
 </head>
-<body><div id="super_container">
-<nav id="nav">
-    
-    <div id="logo_container"><img src="https://www.financialexpress.com/wp-content/uploads/2018/04/taj-1.jpg" alt="logo"></div>
-    <div id="nav_links_container">
+
+<body>
+  <div id="super_container">
+    <nav id="nav">
+
+      <div id="logo_container"><img src="https://www.financialexpress.com/wp-content/uploads/2018/04/taj-1.jpg"
+          alt="logo"></div>
+      <div id="nav_links_container">
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Products</li>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Products</li>
         </ul>
-    </div>
-    <div id="usercridential">
+      </div>
+      <div id="usercridential">
         <div id="useremail"></div>
-        
+
         <button id="userlog"></button>
+      </div>
+      <div id="menu_container">
+        <span>&#9776;</span>
+      </div>
+    </nav>
+    <div id="hero_container">
+      <div id="center_container">
+        <h1>Hii EveryOne <span> &#128512;</span> </h1>
+      </div>
     </div>
-    <div id="menu_container">
-      <span>&#9776;</span>
-  </div>
-</nav>
-<div id="hero_container">
-    <div id="center_container">
-        <h1>Hii EveryOne <span>	&#128512;</span> </h1>
-        <h3>MySelf Manish Yadav <span>&#x1F46E</span></h3>
-        <h3>Thanks For Visiting <span> &#129309</span></h3>
+    <div id="ApiData">
+      <div id="h1_container">
+        <h1>Our Product's</h1>
+      </div>
+      <div id="containerApi">
+      </div>
     </div>
-</div>
-<div id="ApiData">
-    <div id="h1_container"><h1>Our Product's</h1></div>
-    <div id="containerApi">
-  </div>
-  </div>
-  <h1 id="contact_us_h1">Contact Us</h1>
-  <div id="form_container">
- 
-    <div id="image_container">
-        <img src="https://media.istockphoto.com/id/1468757785/photo/human-resources-and-management-concept-employee-must-complete-the-online-survey-form-marked.jpg?s=612x612&w=0&k=20&c=pw8CEktSVEQUF1NXxNRN2vplQ2ZKvRmuSGJqyktRd54=" alt="">
-    </div>
-    <div id="contant_us_form">
+    <h1 id="contact_us_h1">Contact Us</h1>
+    <div id="form_container" data-aos="flip-up">
+
+      <div id="image_container">
+        <img
+          src="https://media.istockphoto.com/id/1468757785/photo/human-resources-and-management-concept-employee-must-complete-the-online-survey-form-marked.jpg?s=612x612&w=0&k=20&c=pw8CEktSVEQUF1NXxNRN2vplQ2ZKvRmuSGJqyktRd54="
+          alt="">
+      </div>
+      <div id="contant_us_form">
         <div id="new_form">
-         <div id="email_container"> <label>Your Product Name:</label>  <input type="text" id="email" placeholder="Enter Product Name"> </div> 
-          <div id="password_container"> <label>Message To Us:</label>  <input type="text" id="password" placeholder="Enter Your Message"></div>
-           <div id="button_container"> <button id="btn">Submit</button></div>
-        </div>
-  </div>
-</div>
-<section class="footer">
-    <div class="footer-row">
-      <div class="footer-col">
-        <h4>Info</h4>
-        <ul class="links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Compressions</a></li>
-          <li><a href="#">Customers</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Collection</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul class="links">
-          <li><a href="#">Free Designs</a></li>
-          <li><a href="#">Latest Designs</a></li>
-          <li><a href="#">Themes</a></li>
-          <li><a href="#">Popular Designs</a></li>
-          <li><a href="#">Art Skills</a></li>
-          <li><a href="#">New Uploads</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul class="links">
-          <li><a href="#">Customer Agreement</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">GDPR</a></li>
-          <li><a href="#">Security</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">Media Kit</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <p>
-          Subscribe to our newsletter for a weekly dose
-          of news, updates, helpful tips, and
-          exclusive offers.
-        </p>
-        <form action="#">
-          <input type="text" placeholder="enter Your email" required>
-          <button type="submit">SUBSCRIBE</button>
-        </form>
-        <div class="icons">
-          <i class="fa-brands fa-facebook-f"></i>
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-linkedin"></i>
-          <i class="fa-brands fa-github"></i>
+          <div id="email_container"> <label>Your Product Name:</label> <input type="text" id="email"
+              placeholder="Enter Product Name"> </div>
+          <div id="password_container"> <label>Message To Us:</label> <input type="text" id="password"
+              placeholder="Enter Your Message"></div>
+          <div id="button_container"> <button id="btn">Submit</button></div>
         </div>
       </div>
     </div>
-  </section>
+    <section class="footer">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul class="links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Compressions</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Collection</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="links">
+            <li><a href="#">Free Designs</a></li>
+            <li><a href="#">Latest Designs</a></li>
+            <li><a href="#">Themes</a></li>
+            <li><a href="#">Popular Designs</a></li>
+            <li><a href="#">Art Skills</a></li>
+            <li><a href="#">New Uploads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="links">
+            <li><a href="#">Customer Agreement</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">GDPR</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Media Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>
+            Subscribe to our newsletter for a weekly dose
+            of news, updates, helpful tips, and
+            exclusive offers.
+          </p>
+          <form action="#">
+            <input type="text" placeholder="enter Your email" required>
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+          <div class="icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
-<script>
-    let loggedInEmail=localStorage.getItem("loggedInEmail")||[];
-    let btn=document.getElementById("userlog");
-    btn.style.display="none";
+  </div>
+  <script>
+    let loggedInEmail = localStorage.getItem("loggedInEmail") || [];
+    let btn = document.getElementById("userlog");
+    btn.style.display = "none";
 
-    if (loggedInEmail){
-        let users=JSON.parse(localStorage.getItem("user"))||[];
-        let user=users.find((user)=>user.email===loggedInEmail);
-        if(user){
-            document.getElementById("useremail").innerText=user.name;
-        
-            btn.innerText="Logout";
-           
-            btn.style.display="block";
-        }
-    }else{
-        window.location.href="index.html";
+    if (loggedInEmail) {
+      let users = JSON.parse(localStorage.getItem("user")) || [];
+      let user = users.find((user) => user.email === loggedInEmail);
+      if (user) {
+        document.getElementById("useremail").innerText = user.name;
+
+        btn.innerText = "Logout";
+
+        btn.style.display = "block";
+      }
+    } else {
+      window.location.href = "index.html";
     }
-    function removekeyfromlocalstorage(){
-        window.location.href="index.html";
-        alert("Log Out Sucessful");
+    function removekeyfromlocalstorage() {
+      window.location.href = "index.html";
+      alert("Log Out Sucessful");
     }
-    btn.addEventListener("click",removekeyfromlocalstorage);
-    
+    btn.addEventListener("click", removekeyfromlocalstorage);
 
-    let cont=document.getElementById("containerApi")
-   
-   let arr= [];
-   async function getValuefromApi(){
-    try{
-    let response= await axios.get("https://fakestoreapi.com/products");
-    console.log(response.data);
-    arr=response.data
-  
-    displayData();
-   }
-   catch(error){
-    console.log(error)
-   }
-}
-getValuefromApi()
 
-function displayData(){
-    cont.innerHTML="";
-    arr.map((element) => {
-        let card=document.createElement("div")
-        card.id="card_cont"
-        let image= document.createElement("img")
-        image.src=element.image;
-        let title=document.createElement("h3")
-        title.innerText=element.title;
-        let price=document.createElement("p")
-        price.innerText=`₹${element.price}`;
-        let description=document.createElement("p");
-        description.innerText=element.description;
-        let rate= document.createElement("h3")
+    let cont = document.getElementById("containerApi")
+
+    let arr = [];
+    async function getValuefromApi() {
+      try {
+        let response = await axios.get("https://fakestoreapi.com/products");
+        console.log(response.data);
+        arr = response.data
+
+        displayData();
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+    getValuefromApi()
+
+    function displayData() {
+      cont.innerHTML = "";
+      arr.map((element) => {
+        let card = document.createElement("div")
+        card.id = "card_cont"
+        let image = document.createElement("img")
+        image.src = element.image;
+        let title = document.createElement("h3")
+        title.innerText = element.title;
+        let price = document.createElement("p")
+        price.innerText = `₹${element.price}`;
+        let description = document.createElement("p");
+        description.innerText = element.description;
+        let rate = document.createElement("h3")
         rate.innerText = `Rating: ${element.rating.rate}`;
-        let button_cont=document.createElement("div");
-        button_cont.id="button_cont"
-        let addtocart=document.createElement("button");
-        addtocart.innerText="add to cart";
-        let favourite=document.createElement("button");
-        favourite.innerText="Wishlist"
+        let button_cont = document.createElement("div");
+        button_cont.id = "button_cont"
+        let addtocart = document.createElement("button");
+        addtocart.innerText = "add to cart";
+        let favourite = document.createElement("button");
+        favourite.innerText = "Wishlist"
         button_cont.append(addtocart, favourite)
-        card.append(image,title,price,description,rate,button_cont)
+        card.append(image, title, price, description, rate, button_cont)
         cont.append(card)
-});
-}
+      });
+
+
+    }
+  </script>
+<script>
+  AOS.init();
 </script>
 </body>
 
