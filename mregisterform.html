@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         #super_container{
+        #super_container {
             /* border: 1px solid blue; */
             width: 90%;
             height: 95vh;
@@ -13,279 +14,349 @@
             display: grid;
             place-items: center;
             background-image:
-    linear-gradient(
-      rgb(17, 144, 248), #f006c9,rgb(23, 23, 24)
-    );
-    border-radius: 7px;
+                linear-gradient(rgb(17, 144, 248), #f006c9, rgb(23, 23, 24));
+            border-radius: 7px;
         }
-        #form{
-           /* border: 1px solid red; */
-width: 30%;
-height: 60vh;
-display: grid;
-place-items: center;
-background-color: white;
-border-radius: 10px;
-margin-top: 10px; 
+
+        #form {
+            /* border: 1px solid red; */
+            width: 30%;
+            height: 60vh;
+            display: grid;
+            place-items: center;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 10px;
         }
-        #h1_container{
+
+        #h1_container {
             /* border: 1px solid red; */
             text-align: center;
             width: 60%;
         }
-        #h1_container h1{
-            color:black;
+
+        #h1_container h1 {
+            color: black;
         }
-        hr{
+
+        hr {
             width: 99%;
         }
-        #name{
-          /* border: 1px solid rgb(231, 15, 15); */
-    width: 95%;
-    padding: 5px;
-    /* border-radius: 10px; */
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #000000;
-    margin: auto;
-    text-align: center;   
+
+        #name {
+            /* border: 1px solid rgb(231, 15, 15); */
+            width: 95%;
+            padding: 5px;
+            /* border-radius: 10px; */
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #000000;
+            margin: auto;
+            text-align: center;
         }
-        #name:focus{
-      outline: none;
-      border-color: #ccc;}
-        #email{
-    /* border: 1px solid rgb(231, 15, 15); */
-    width: 95%;
-    padding: 5px;
-    /* border-radius: 10px; */
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #000000;
-    margin: auto;
-    text-align: center;
-}
-#email:focus{
-      outline: none;
-      border-color: #ccc;
-    }
-    #mobile{
-        /* border: 1px solid rgb(231, 15, 15); */
-    width: 95%;
-    padding: 5px;
-    /* border-radius: 10px; */
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #000000;
-    margin: auto;
-    text-align: center;
-    }
-    #mobile:focus{
-      outline: none;
-      border-color: #ccc;
-    }
-#password{
-    /* border: 1px solid rgb(216, 10, 10); */
-    width: 95%;
-    padding: 5px;
-    /* border-radius: 10px; */
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #000000;
-    margin: auto;
-    text-align: center;
-}
-#password:focus{
-      outline: none;
-      border-color: #ccc;}
-#btn{
-    border: 1px solid black;
-    width: 98%;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 20px;
-    /* text-align: center; */
-    font-size: large;
-    transition: all 1s ease-in-out;
-    
-   
-}
-#btn:hover{
-    cursor: pointer;
-    background-color: 
-    rgb(206,44,209);
-}
-label{
-    color:black;
-    font-size: large;
-}
-#p_container{
-    color: black;
-}
-#email_container{
-    /* border: 1px solid red; */
-    /* text-align: center; */
-    width: 85%;
-    /* display:flex ; */
-    margin: auto;
-}
-#Name_container{
-    /* border: 1px solid red; */
-    /* text-align: center; */
-    width: 85%;
-    /* display: flex; */
-    margin: auto;
-}
-#password_container{
-    /* border: 1px solid red; */
-    /* text-align: center; */
-    width: 85%;
-    /* display: flex; */
-    margin: auto;
-}
-#Mobile_container{
-     /* border: 1px solid red; */
-    /* text-align: center; */
-    width: 85%;
-    /* display: flex; */
-    margin: auto;
-}
-#button_container{
-    /* border: 1px solid red; */
-    text-align: center;
-    width: 85%;
-    padding: 10px;
-}
-#last_container{
-    /* border: 1px solid red; */
-    width: 85%;
-    text-align: center;
-}
-#forget_container {
-    /* border: 1px solid red; */
-    width: 85%;
-}
-#forget_container p{
-    /* border: 1px solid red; */
-    width: 34%;
-}
-#forget_container p:hover{
-    cursor: pointer;
-}
-@media screen and (min-width:360px) and (max-width:767px) {
-    #form{
-        width: 90%;
-        height: 88vh;
-       
-    }
-    label{
-        font-size:14px;
-    }
-    #btn{
-        width: 90%;
-    }
-    #button_container{
-        padding: 0px;
-        width: 90%;
-    }
-    #Name_container,#email_container,#Mobile_container,#password_container{
-        width: 91%;
-    }
-}
-@media screen and (min-width:768px) and (max-width:1024px) {
-    #form{
-        width: 90%;
-        height: 70vh;
-       
-    }
-    label{
-        font-size:25px;
-    }
-    #btn{
-        width: 75%;
-    }
-    #button_container{
-        padding: 0px;
-        width: 75%;
-    }
-    #Name_container,#email_container,#Mobile_container,#password_container{
-        width: 92%;
-    }
-    #name,#email,#mobile,#password{
-        width: 97.5%;
-    }
-    #p_container{
-        font-size: 20px;
-    }
-}
-@media screen and (min-width:1025px) and (max-width:1280px) {
-    #form{
-        width: 90%;
-        height: 70vh;
-       
-    }
-    label{
-        font-size:25px;
-    }
-    #btn{
-        width: 50%;
-    }
-    #button_container{
-        padding: 0px;
-        width: 50%;
-    }
-    #Name_container,#email_container,#Mobile_container,#password_container{
-        width: 92%;
-    }
-    #name,#email,#mobile,#password{
-        width: 97.5%;
-    }
-    #p_container{
-        font-size: 20px;
-    }
-}
+
+        #name:focus {
+            outline: none;
+            border-color: #ccc;
+        }
+
+        #email {
+            /* border: 1px solid rgb(231, 15, 15); */
+            width: 95%;
+            padding: 5px;
+            /* border-radius: 10px; */
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #000000;
+            margin: auto;
+            text-align: center;
+        }
+
+        #email:focus {
+            outline: none;
+            border-color: #ccc;
+        }
+
+        #mobile {
+            /* border: 1px solid rgb(231, 15, 15); */
+            width: 95%;
+            padding: 5px;
+            /* border-radius: 10px; */
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #000000;
+            margin: auto;
+            text-align: center;
+        }
+
+        #mobile:focus {
+            outline: none;
+            border-color: #ccc;
+        }
+
+        #password {
+            /* border: 1px solid rgb(216, 10, 10); */
+            width: 95%;
+            padding: 5px;
+            /* border-radius: 10px; */
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #000000;
+            margin: auto;
+            text-align: center;
+        }
+
+        #password:focus {
+            outline: none;
+            border-color: #ccc;
+        }
+
+        #btn {
+            border: 1px solid black;
+            width: 98%;
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 20px;
+            /* text-align: center; */
+            font-size: large;
+            transition: all 1s ease-in-out;
+
+
+        }
+
+        #btn:hover {
+            cursor: pointer;
+            background-color:
+                rgb(206, 44, 209);
+        }
+
+        label {
+            color: black;
+            font-size: large;
+        }
+
+        #p_container {
+            color: black;
+        }
+
+        #email_container {
+            /* border: 1px solid red; */
+            /* text-align: center; */
+            width: 85%;
+            /* display:flex ; */
+            margin: auto;
+        }
+
+        #Name_container {
+            /* border: 1px solid red; */
+            /* text-align: center; */
+            width: 85%;
+            /* display: flex; */
+            margin: auto;
+        }
+
+        #password_container {
+            /* border: 1px solid red; */
+            /* text-align: center; */
+            width: 85%;
+            /* display: flex; */
+            margin: auto;
+        }
+
+        #Mobile_container {
+            /* border: 1px solid red; */
+            /* text-align: center; */
+            width: 85%;
+            /* display: flex; */
+            margin: auto;
+        }
+
+        #button_container {
+            /* border: 1px solid red; */
+            text-align: center;
+            width: 85%;
+            padding: 10px;
+        }
+
+        #last_container {
+            /* border: 1px solid red; */
+            width: 85%;
+            text-align: center;
+        }
+
+        #forget_container {
+            /* border: 1px solid red; */
+            width: 85%;
+        }
+
+        #forget_container p {
+            /* border: 1px solid red; */
+            width: 34%;
+        }
+
+        #forget_container p:hover {
+            cursor: pointer;
+        }
+
+        @media screen and (min-width:360px) and (max-width:767px) {
+            #form {
+                width: 90%;
+                height: 88vh;
+
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            #btn {
+                width: 90%;
+            }
+
+            #button_container {
+                padding: 0px;
+                width: 90%;
+            }
+
+            #Name_container,
+            #email_container,
+            #Mobile_container,
+            #password_container {
+                width: 91%;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1024px) {
+            #form {
+                width: 90%;
+                height: 70vh;
+
+            }
+
+            label {
+                font-size: 25px;
+            }
+
+            #btn {
+                width: 75%;
+            }
+
+            #button_container {
+                padding: 0px;
+                width: 75%;
+            }
+
+            #Name_container,
+            #email_container,
+            #Mobile_container,
+            #password_container {
+                width: 92%;
+            }
+
+            #name,
+            #email,
+            #mobile,
+            #password {
+                width: 97.5%;
+            }
+
+            #p_container {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (min-width:1025px) and (max-width:1280px) {
+            #form {
+                width: 90%;
+                height: 70vh;
+
+            }
+
+            label {
+                font-size: 25px;
+            }
+
+            #btn {
+                width: 50%;
+            }
+
+            #button_container {
+                padding: 0px;
+                width: 50%;
+            }
+
+            #Name_container,
+            #email_container,
+            #Mobile_container,
+            #password_container {
+                width: 92%;
+            }
+
+            #name,
+            #email,
+            #mobile,
+            #password {
+                width: 97.5%;
+            }
+
+            #p_container {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="super_container">
-      
-    <form id="form">
-        <div id="h1_container"><h1>Sign Up</h1></div><hr>
-      <div id="Name_container"> <label for> Name:</label> <input type="text"  id="name" placeholder="Enter Your Name"></div>
-        <div id="email_container"> <label>Email:</label>  <input type="email" id="email" placeholder="Enter Your Email"></div>
-       <div id="Mobile_container"><label >Mobile No:</label><input type="text" id="mobile" placeholder="Enter Your Mobile No"></div> 
-       <div id="password_container"><label >Create Password:</label> <input type="password" id="password" placeholder="Create Password"></div>
-       <div id="button_container">
-        <button id="btn">Sign Up</button></div>
-        <div id="last_container"><p id="p_container">Already Register <span><a href="http://127.0.0.1:5500/Manish_login_register_form/index.html"> Please Sign In Here</a></span></p></div>
-    </form>
 
-</div>
+        <form id="form">
+            <div id="h1_container">
+                <h1>Sign Up</h1>
+            </div>
+            <hr>
+            <div id="Name_container"> <label for> Name:</label> <input type="text" id="name"
+                    placeholder="Enter Your Name"></div>
+            <div id="email_container"> <label>Email:</label> <input type="email" id="email"
+                    placeholder="Enter Your Email"></div>
+            <div id="Mobile_container"><label>Mobile No:</label><input type="text" id="mobile"
+                    placeholder="Enter Your Mobile No"></div>
+            <div id="password_container"><label>Create Password:</label> <input type="password" id="password"
+                    placeholder="Create Password"></div>
+            <div id="button_container">
+                <button id="btn">Sign Up</button>
+            </div>
+            <div id="last_container">
+                <p id="p_container">Already Register <span><a href="./index.html"> Please Sign In Here</a></span></p>
+            </div>
+        </form>
+
+    </div>
 </body>
 <script>
-    let arr=[]
-    let form=document.getElementById("form")
-    let name=document.getElementById("name")
-    let email=document.getElementById("email")
-    let mobile=document.getElementById("mobile")
-    let password=document.getElementById("password")
-    let btn=document.getElementById("btn")
-    btn.addEventListener("click",(e) =>{
+    let arr = []
+    let form = document.getElementById("form")
+    let name = document.getElementById("name")
+    let email = document.getElementById("email")
+    let mobile = document.getElementById("mobile")
+    let password = document.getElementById("password")
+    let btn = document.getElementById("btn")
+    btn.addEventListener("click", (e) => {
         e.preventDefault()
-        let obj={
-            name:document.getElementById("name").value,
-            email:document.getElementById("email").value,
-            mobile:document.getElementById("mobile").value,
-            password:document.getElementById("password").value
+        let obj = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            mobile: document.getElementById("mobile").value,
+            password: document.getElementById("password").value
         }
         arr.push(obj)
-        if (obj.name==""||obj.email==""||obj.mobile==""||obj.password==""){
-        alert("Please fill all the fields");
-        return
-    }
-        localStorage.setItem("user",JSON.stringify(arr))
+        if (obj.name == "" || obj.email == "" || obj.mobile == "" || obj.password == "") {
+            alert("Please fill all the fields");
+            return
+        }
+        localStorage.setItem("user", JSON.stringify(arr))
         alert("Sign Up Sucessful")
         form.reset();
-        window.location.href="index.html"
+        window.location.href = "index.html"
     }
     );
 </script>
