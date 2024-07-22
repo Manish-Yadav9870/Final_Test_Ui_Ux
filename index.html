@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In Page</title>
+    <title>Document</title>
     <style>
         #super_container{
             /* border: 1px solid blue; */
@@ -27,7 +27,6 @@ place-items: center;
 background-color: white;
 border-radius: 10px;
 margin-top: 100px;
-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
         }
         #h1_container{
             /* border: 1px solid red; */
@@ -211,21 +210,22 @@ width: 80%;
 </head>
 <body>
     <div id="super_container">
-        <div id="form_container">
-            <div id="h1_container"><h1>Sign In</h1></div><hr>
-     <div id="email_container"> <label>Your Email:</label>  <input type="text" id="email" placeholder="Enter Your Email"> </div> 
-      <div id="password_container"> <label>Password:</label>  <input type="password" id="password" placeholder="Enter Your Password"></div>
-      <div id="forget_container"><p>Forget Password?</p></div>
-       <div id="button_container"> <button id="btn">Sign In</button></div>
-       <div id="last_container"> <p id="p_container">Not a Member? <span><a href="http://127.0.0.1:5501/Final_Test_Ui_Ux/mregisterform.html">Sign Up Here</a></span></p></div>
-    </div>
-       <p id="msg"></p>
-       <span id="logo"></span>
-    </div>
-    
+    <div id="form_container">
+        <div id="h1_container"><h1>Sign In</h1></div><hr>
+ <div id="email_container"> <label>Your Email:</label>  <input type="text" id="email" placeholder="Enter Your Email"> </div> 
+  <div id="password_container"> <label>Password:</label>  <input type="password" id="password" placeholder="Enter Your Password"></div>
+  <div id="forget_container"><p>Forget Password?</p></div>
+   <div id="button_container"> <button id="btn">Sign In</button></div>
+   
+   <div id="last_container"> <p id="p_container">Not a Member? <span><a href="http://127.0.0.1:5500/Manish_login_register_form/mregisterpage.html">Sign Up Here</a></span></p></div>
+</div>
+   <p id="msg"></p>
+   <span id="logo"></span>
+</div>
+
 </body>
 <script>
-     let btn = document.getElementById("btn");
+    let btn = document.getElementById("btn");
     // let arr = [
     //     {email: "abc@gmail.com", password: "123456"},
     //     {email: "xyz@gmail.com", password: "1234567"}
@@ -245,13 +245,14 @@ width: 80%;
     );
     if(value){
 msg.innerHTML="";
-alert("Log In Sucessful")
+alert("Sign In Sucessful")
 let loggedInEmail=localStorage.setItem("loggedInEmail",userdetails.email)
 window.location.href="mainweb.html";
+
 msg.style.color="green";
        } else{
         msg.innerHTML="";
-        alert("Login Failed");
+        alert("Sign In Failed");
         msg.style.color="red";
        }
     }
@@ -260,4 +261,5 @@ msg.style.color="green";
         loginUser();
     });
 </script>
+
 </html>
